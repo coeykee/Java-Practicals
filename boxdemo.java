@@ -1,4 +1,4 @@
-//intro to classa and object
+//intro to classes and object
 import java.util.*;
 class box
 	{
@@ -16,5 +16,5 @@ class boxdemo
 			b1.depth=12.5;
 			double vol=b1.width*b1.height*b1.depth;
 			System.out.println("vol="+vol);
-		}//mainend
-	}//classend
+		}//Main End
+	}//Class End

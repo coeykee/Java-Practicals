@@ -8,7 +8,8 @@ class box
 			{
 				System.out.println("Volume="+w*h*d);
 			}
-	}//ce
+	}//box End
+
 class boxdemo1
 	{
 	 public static void main(String a[])
@@ -18,5 +19,5 @@ class boxdemo1
 			b1.h=21.5;
 			b1.d=20;
 			b1.vol();
-		}//me
-}//ce
+		}//Main end
+}//Class End
