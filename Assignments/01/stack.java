@@ -1,4 +1,4 @@
-/*implementing stack*/
+/*implementing stack using java*/
 import java.util.*;
 class stack
 {
