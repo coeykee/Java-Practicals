@@ -10,36 +10,24 @@ Ship. Demonstrate all classes in a application.
 
 import java.util.*;
 interface Vehicle {
-	String name="";
-	int maxPassanger=0;
-	double maxSpeed=0.0;
+	String name="Qudracycle";
+	int maxPassanger=4;
+	double maxSpeed=30;
 	} 
 
 interface LandVehicle extends Vehicle {
-	int numWheels=0;
+	int numWheels=4;
 	void drive();
-
 	}
 
 interface SeaVehicle extends Vehicle {
-	double displacement=0.0;
+	double displacement=30;
 	void launch();
 	}
 
 class Car implements LandVehicle {
-	String name;
-	int maxPassanger;
-	double maxSpeed;
-	int numWheels;
-
-		Car(String n, int p, double s, int w){
-		name=n;
-		maxPassanger=p;
-		maxSpeed=s;
-		numWheels=w;
-		}
 		
-		void getDetails(){
+		public void getDetails(){
 			System.out.println("\n\nVehicle Details:");
 			System.out.printf("Name:"+name+"\nmaxPassengers:"+maxPassanger+"\nmaxSpeed:"+maxSpeed+"\nNumWheels:"+numWheels);
 		}
@@ -48,65 +36,44 @@ class Car implements LandVehicle {
 		System.out.println("\n****Driving !****");
 		}
 		
-		void getOnRoad() {
+		public void getOnRoad() {
 		System.out.println("Your on Highway now");
 		}
 
 	}
 
-class HoverCraft{
-	String name;
-	int maxPassangers;
-	double maxSpeed;
-	int numWheels;
-	double displacement;
-
-		HoverCraft(String n, int p, double s, int w, double d){
-		name=n;
-		maxPassangers=p;
-		maxSpeed=s;
-		numWheels=w;
-		displacement=d;
-		}
-
+class HoverCraft implements LandVehicle, SeaVehicle{
 	public void launch() {
 		System.out.println("\nLaunching!");
 		}
 
 	void getDetails(){
 			System.out.println("\n\nVehicle Details:");
-			System.out.printf("Name:"+name+"\nmaxPassengers:"+maxPassangers+"\nmaxSpeed:"+maxSpeed+"\nNumWheels:"+numWheels);
+			System.out.printf("Name:"+name+"\nmaxPassengers:"+maxPassanger+"\nmaxSpeed:"+maxSpeed+"\nNumWheels:"+numWheels);
 		}
 
 	public void Drive() {
 		System.out.println("Your hovering now!");
 		}
 
-	void enterLand() {
+	public void enterLand() {
 		System.out.println("Your on Land now!");
 		}
 
-	void enterSea() {
+	public void enterSea(){
 		System.out.println("Your on Water, look out for whales");
 		}
+	public void drive() {
+		System.out.println("\n****Driving !****");
+		}
+		
 	}
 
-class Ship{
-	String name;
-	int maxPassangers;
-	double maxSpeed;
-	double displacement;
-
-		Ship(String n, int p, double s, double d) {
-		name=n;
-		maxPassangers=p;
-		maxSpeed=s;
-		displacement=d;
-		}
+class Ship implements SeaVehicle {
 
 	void getDetails(){
 			System.out.println("\n\nVehicle Details:");
-			System.out.printf("Name:"+name+"\nmaxPassengers:"+maxPassangers+"\nmaxSpeed:"+maxSpeed+"\nDisplacement:"+displacement);
+			System.out.printf("Name:"+name+"\nmaxPassengers:"+maxPassanger+"\nmaxSpeed:"+maxSpeed+"\nDisplacement:"+displacement);
 		}
 
 	public void launch() {
@@ -120,19 +87,19 @@ class Ship{
 
 class Vehicles{
 	public static void main(String a[]){
-		Car c=new Car("Donald",4,45,45);
+		Car c=new Car();
 		c.getDetails();
 		c.drive();
 		c.getOnRoad();
 
-		HoverCraft h=new HoverCraft("Quadracycle",2,60,4,45);
+		HoverCraft h=new HoverCraft();
 		h.getDetails();
 		h.launch();
 		h.enterSea();
 		h.Drive();
 
 		h.enterLand();
-		Ship s=new Ship("Titan",250,100.0,100.1);
+		Ship s=new Ship();
 		s.getDetails();
 		s.launch();
 		s.sailTheSea();
