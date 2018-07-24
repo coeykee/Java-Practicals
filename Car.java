@@ -32,7 +32,7 @@ class Tyre implements pointo {
 	tyrePressure=p;
 	}
 	void display(){
-	System.out.println("Number of tyres="+numTyre);
+	System.out.println("\nNumber of tyres="+numTyre);
 	System.out.println("Tyre Pressure="+tyrePressure);
 	}
 
@@ -48,20 +48,29 @@ class Door implements pointo {
 	}
 
 	void getDoorsInfo(){
-	System.out.println("Number of Doors:"+numDoors);
+	System.out.println("\nNumber of Doors:"+numDoors);
 	System.out.println("Doors open:"+opens);
 
 	}
 	}
 class Car{
 public static void main(String n[]){
-	Engine en=new Engine(40,40,4,"Diesel");
+/*	Engine en=new Engine(40,40,4,"Diesel");
 	Tyre t=new Tyre(4,12);
 	Door d=new Door(4,"Verticlly");
 System.out.println("***************** Car Information **********************");
 	en.getEngineDetails();
 	t.display();
-	d.getDoorsInfo();
+	d.getDoorsInfo();*/
+	
+	pointo get;
+	get=new Engine(50,50,4,"petrol");
+	((Engine)get).getEngineDetails();
+	get=new Tyre(4,45);
+	((Tyre)get).display();
+	get=new Door(4,"vertically");
+	((Door)get).getDoorsInfo();
+		
 
 }
 
