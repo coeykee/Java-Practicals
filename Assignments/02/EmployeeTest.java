@@ -9,7 +9,7 @@ a 10% raise and display each Employee's yearly salary again.
 */
 
 import java.util.*;
-class employee
+class EmployeeTest
 {
  String name;
  String last_name;
