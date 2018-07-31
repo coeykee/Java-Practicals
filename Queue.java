@@ -3,31 +3,36 @@
 import java.util.*;
 
 class Queue{
+int SIZE=5;
+//void size(int s){
+	//	SIZE=s;}
+int Q[]=new int[SIZE];
 int MAX;
-int FRONT=0;
-int REAR=0;
-	Queue(int m){
-	MAX=m;
-	}
-int Q[]=new int[MAX] ;
+int FRONT;
+int REAR;
+int temp;
 
-	void push(int e){
-		int temp=e;
+
+
+	void enqueue(int e){
+		temp=e;
 		if(REAR>MAX){
-		System.out.println("Reached END! Can't push (-_-)");
+		System.out.println("Reached END! Can't enqueue");
 		}
 		else{
-		Q[REAR]=temp;
+		Q[REAR+1]=temp;
+		System.out.println(temp+" ENQUEUED!");
 		REAR++;
 		}
-	}//push end
+	}//enqueue end
 
-	void pop(){
-		if(FRONT>REAR){System.out.println("Nothings their! Can't pop");}
+	void dequeue(){
+		if(FRONT>REAR){System.out.println("Nothing in Queue, Can't dequeue!");}
 		else{
+		System.out.println(Q[FRONT]+" DEQUEUED!");
 		FRONT++;
 		}
-	}//popends
+	}//dequeue end
 
 	void displayQ(){
 		System.out.println("Queue content:");
@@ -38,12 +43,13 @@ int Q[]=new int[MAX] ;
 
 	public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
-			System.out.println("Enter Queue size:");
-			Queue q=new Queue(sc.nextInt());
+			Queue q=new Queue();
+		//System.out.println("Enter Queue size:");
+		//	q.size(sc.nextInt());
 		System.out.println("Enter choice:# 1.Display 2.Push 3.Pop 4.Exit");
 		int choice=0;
 		while(choice!=4){
-			System.out.println("#");
+			System.out.print("#");
 			choice=sc.nextInt();
 				switch(choice){
 					case 1:{
@@ -52,11 +58,11 @@ int Q[]=new int[MAX] ;
 						}	
 					case 2:{
 						System.out.println("Enter Element:");
-						q.push(sc.nextInt());
+						q.enqueue(sc.nextInt());
 						break;
 						}
 					case 3:{
-						q.pop();
+						q.dequeue();
 						break;
 						}
 					case 4:{
