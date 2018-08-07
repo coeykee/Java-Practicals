@@ -1,5 +1,4 @@
 package statistical;
-import java.util.Scanner;
 public class Average{
 	public double getAverage(int [] a){
 		double avrg=0;

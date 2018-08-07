@@ -1,6 +1,5 @@
 import statistical.*;
 import java.util.Scanner;
-import java.util.Arrays;
 class App{
 	public static void main(String args[]){
 		System.out.println("Enter data size");
@@ -13,13 +12,13 @@ class App{
 		}
 		Average getAvg=new Average();
 		double AVG=getAvg.getAverage(data);
-		System.out.println("Average="+AVG);
+		System.out.print("Average="+String.format("%.2f",AVG)+"\n");
 		Mean mn=new Mean();
-		System.out.println("Mean="+mn.getMean(data));
+		System.out.print("Mean="+String.format("%.2f",mn.getMean(data))+"\n");
 		Median md=new Median();
-Arrays.sort(data);
 		System.out.println("Median="+md.getMedian(data));
-
+		stdDeviation stdD=new stdDeviation();
+		System.out.println("StdDeviation="+stdD.getStdDeviation(data));
 	}
 
 

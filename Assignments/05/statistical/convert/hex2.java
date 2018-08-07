@@ -1,4 +1,16 @@
 package statistical.convert;
-import java.util.Scanner;
+public class hex2{
+	public int Decimal(int [] a){
 
-public class Mean{}
+	}
+	public String Binary(int [] a){
+
+	}
+	public int Octal(int [] a){
+
+	}
+
+
+
+
+}
