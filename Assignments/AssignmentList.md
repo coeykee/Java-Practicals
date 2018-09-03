@@ -1,15 +1,15 @@
-<b>Minimum 15 experiments should be conducted based on above topics and covering following
-list. At least two experiments should be conducted on each unit in the syllabus.</b>
-<ol><li>
-Create a class called Employee that includes three pieces of information as instance
+#Minimum 15 experiments should be conducted based on above topics and covering following
+#list. At least two experiments should be conducted on each unit in the syllabus.
+
+1. Create a class called Employee that includes three pieces of information as instance
 variables- first name, a last name and a monthly salary. Your class should have a
 constructor that initializes the three instance variables. Provide a set and a get method for
 each instance variable. If the monthly salary is not positive, set it to 0.0. Write a test
 application named EmployeeTest that demonstrates class Employee's capabilities. Create
 two Employee objects and display each object's yearly salary. Then give each Employee
 a 10% raise and display each Employee's yearly salary again.
-</li><li>
-Create class SavingsAccount. Use a static variable annualInterestRate to store the annual
+
+2. Create class SavingsAccount. Use a static variable annualInterestRate to store the annual
 interest rate for all account holders. Each object of the class contains a private instance
 variable savingsBalance indicating the amount the saver currently has on deposit. Provide
 method calculateMonthlyInterest to calculate the monthly interest by multiplying the
@@ -21,24 +21,24 @@ objects, saver1 and saver2, with balances of Rs 2000.00 and Rs 3000.00, respecti
 annualInterestRate to 4%, then calculate the monthly interest and print the new balances
 for both savers. Then set the annualInterestRate to 5%, calculate the next month's
 interest and print the new balances for both savers.
-</li><li>
-Create Vehicle Interface with name, maxPassanger, and maxSpeed variables. Create
+
+3. Create Vehicle Interface with name, maxPassanger, and maxSpeed variables. Create
 LandVehicle and SeaVehicle Inteface from Vehicle interface. LandVehicle has
 numWheels variable and drive method. SeaVehicle has displacement variable and launch
 method. Create Car class from LandVehicle, HoverCraft from LandVehicle and
 SeaVehicle interface. Also create Ship from SeaVehicle. Provide additional methods in
 HoverCraft as enterLand and enterSea. Similarly provide other methods for class Car and
 Ship. Demonstrate all classes in a application.
-</li><li>
-Create Separate Engine, Tyre, and Door Class. Create a Car class using these classes.
+
+4. Create Separate Engine, Tyre, and Door Class. Create a Car class using these classes.
 And show functionality of each component in the car.
-</li><li>
-Develop a mathematical package for Statistical operations like Mean, Median, Average,
+
+5. Develop a mathematical package for Statistical operations like Mean, Median, Average,
 Standard deviation. Create a sub package in the math package -convert. In “convert”
 package provide classes to convert decimal to octal, binary, hex and vice-versa. Develop
 application program to use this package, and build executable jar file of it.
-</li><li>
-Develop a class Expr to create and evaluate given expression. Constructor accepts the
+
+6. Develop a class Expr to create and evaluate given expression. Constructor accepts the
 expression as String. For example, Expr("x^2") or Expr("sin(x)+3*x"). If the parameter
 in the constructor call does not represent a legal expression, then the constructor throws
 an IllegalArgumentException. The message in the exception describes the error. Provide
@@ -47,8 +47,8 @@ evaluated answer. For example, if Expr represents the expression 3*x+1, then
 func.value(5) is 3*5+1, or 16.Finally, getDefinition() returns the definition of the
 expression. This is just the string that was used in the constructor that created the
 expression object.
-</li><li>
-Write a class to represent Roman numerals. The class should have two constructors. One
+
+7. Write a class to represent Roman numerals. The class should have two constructors. One
 constructs a Roman numeral from a string such as "XVII" or "MCMXCV". It should
 throw a NumberFormatException if the string is not a legal Roman numeral. The other
 constructor constructs a Roman numeral from an int. It should throw a
@@ -56,8 +56,8 @@ NumberFormatException if the int is outside the range 1 to 3999.In addition, the
 should have two instance methods. The method toString() returns the string that
 represents the Roman numeral. The method toInt() returns the value of the Roman
 numeral as an int.
-</li><li>
-Take file name as input to your program, If file is existing the open and display contents
+
+8. Take file name as input to your program, If file is existing the open and display contents
 of the file. After displaying contents of file ask user – do you want to add the data at the
 end of file. If a user gives yes as response, then accept data from user and append it to
 file. If file in not existing then create a fresh new file and store user data into it. User
@@ -66,6 +66,7 @@ should type exit on new line to stop the program.
 9. Take Student information such as name, age, weight, height, city, phone from user and
 store it in the file using DataOutputStream and FileOutputStream and Retrive data using
 DataInputStream and FileInputStream and display the result.
+
 10. Write a program to remove whitespaces from a text file. Name of the file is given using
 command line.
 
