@@ -8,9 +8,9 @@ import java.awt.*;
 class Frame extends Jframe implements ActionListener{
 
 
-	 JButton jb1;
-	 JTextField tf1;
-	 JLabel lb1;
+	public JButton jb1;
+	public JTextField tf1;
+	public  JLabel lb1;
 	public Frame(){
 		setTitle("Factorial Machine");
 		setLayout(new FlowLayout());
@@ -24,16 +24,16 @@ class Frame extends Jframe implements ActionListener{
 	}
 	void setLabels(){
 		lb1=new JLabel("Enter a integer:");
-		add(lb1);
+		lb1.add();
 	}
 
 	void  setTextFields(){
 		tf1=new JTextField();
-		add(tf1);
+		tf1.add();
 	}
 	void setButtons(){
 		jb1=new JButton("Get Factorial");
-		add(jb1);
+		jb1.add();
 
 	}
 
