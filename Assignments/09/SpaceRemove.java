@@ -28,7 +28,7 @@ public class SpaceRemove{
 		if(ch=='\0'){
 			fw=new FileWriter(args[0],true);
 			while(!(br1.readLine()).equals('\0')){
-				fw.write(getChannel(br1), "");
+				fw.write(br1.getChannel(), "");
 
 			}
 			fw.close();

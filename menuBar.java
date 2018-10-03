@@ -4,21 +4,22 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-class frame extends JFrame implements ActionListener{
+class page extends JFrame implements ActionListener{
    JTextField tf1, tf2;
    JButton b1,b2;
    JLabel l1, l2;
    JMenuBar mb;
-   JMenuItem cut, copy, paste, selectAll;
+   JMenu file, edit;
+   JMenuItem save, open, cut, copy, paste, selectAll;
    JTextArea ta; 
    FileWriter fr=null;
    FileReader read=null;
    BufferedReader br=null;
 
-   public frame(){
+   public page(){
    	setTitle("Contact Maneger");
    	setSize(700,600);
-   	setLayout(new FlowLayout());
+      setLayout(new FlowLayout());
    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	setComponents();
    	//setActions();
@@ -27,23 +28,44 @@ class frame extends JFrame implements ActionListener{
    }
 
    		void setComponents(){
-   			l1=new JLabel("Contact Name:");
-   			tf1=new JTextField(20);
-   			add(l1);
-   			add(tf1);
-			   l2=new JLabel("Contact NUmber:");
-   			tf2=new JTextField(20);
-   			add(l2);
-   			add(tf2);
+            mb=new JMenuBar();
+            mb.setBounds(0,0,20,700);
+            add(mb);
 
-   			b1=new JButton("Save");
-   			add(b1);
+            file=new JMenu("File");
+            mb.add(file);
+
+            edit=new JMenu("Edit");
+            mb.add(edit);
+		
+	    save=new JMenuItem("save");
+            file.add(save);
+	    open=new JMenuItem("open");
+	    file.add(open);
+
+            cut=new JMenuItem("cut");
+            edit.add(cut);
+
+            copy=new JMenuItem("copy");
+            edit.add(copy);
+
+            paste=new JMenuItem("paste");
+            //paste.setAccelerator(keystroke.getkeystroke("ctrl v"));
+            edit.add(paste);
+
+            selectAll=new JMenuItem("select all");
+            //selectAll.setAccelerator(keystroke.getkeystroke("ctrl a"));
+            edit.add(selectAll);
+
+   	    /*b1=new JButton("Save");
+   	    add(b1);
             b2=new JButton("View");
-            add(b2);
-   			b1.addActionListener(this);
-            b2.addActionListener(this);
+            add(b2);*/
+   	    save.addActionListener(this);
+            open.addActionListener(this);
 
             ta=new JTextArea(30,50);
+	    ta.setBounds(20, 30, 680, 590);
             add(ta);
 
    		}
@@ -51,18 +73,16 @@ class frame extends JFrame implements ActionListener{
  
    		public void actionPerformed(ActionEvent e){
             if(e.getSource()==b1){
-   				String name=tf1.getText();
-   				String number=tf2.getText();
+   				String name=ta.getText();
    				try{
    				  try{
-   					 fr=new FileWriter("contacts.txt",true);
+   					 fr=new FileWriter("document.txt",true);
    				  }
    				  catch(FileNotFoundException ev){
    					 System.out.println(ev);
    				  }
 
-   				  fr.write("Name:"+name+"\n");
-   				  fr.write("Number:"+number+"\n\n");
+   				  fr.write(""+name+"\n");
    				  fr.close();
    				  JOptionPane.showMessageDialog(rootPane, "Saved");
    				}
@@ -74,7 +94,7 @@ class frame extends JFrame implements ActionListener{
             if(e.getSource()==b2){
               try{
                   try{
-                     read=new FileReader("contacts.txt");
+                     read=new FileReader("document.txt");
                      br=new BufferedReader(read);
                    }
                   catch(FileNotFoundException b2ex){
@@ -95,10 +115,10 @@ class frame extends JFrame implements ActionListener{
 
 }
 
-public class vcard{
+public class menuBar{
 
    public static void main(String args[]){
-            frame vv=new frame();
+            page vv=new page();
    }
 
 }

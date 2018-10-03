@@ -10,16 +10,17 @@ class StudentInfo{
 		FileOutputStream fout=null;
 		DataOutputStream dout=null;
 
+		System.out.println("***Enter Student Information***");
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter Name: ");
-		String name=sc.next();
-		System.out.println("Enter Roll No: ");
+		System.out.print("Enter Name: ");
+		String name=sc.nextLine();
+		System.out.print("Enter Roll No: ");
 		int rollno=sc.nextInt();
-		System.out.println("Enter your age: ");
+		System.out.print("Enter age: ");
 		int age=sc.nextInt();
-		System.out.println("Enter your weight: ");
+		System.out.print("Enter weight: ");
 		int weight=sc.nextInt();
-		System.out.println("Enter your height: ");
+		System.out.print("Enter height: ");
 		int height=sc.nextInt();
 
 		try{
